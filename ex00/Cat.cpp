@@ -8,7 +8,7 @@ Cat::Cat(const std::string name):Animal(name){
     std::cout << "the overlading Cat constractor is caled\n";
 }
 
-Cat::Cat(const Cat& other){
+Cat::Cat(const Cat& other):Animal(other){
     std::cout << "the Cat Copy constructor called" << std::endl;
     type = other.type;
 }

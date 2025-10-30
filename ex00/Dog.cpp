@@ -8,7 +8,7 @@ Dog::Dog(const std::string name):Animal(name){
     std::cout << "the overlading Dog constractor is caled\n";
 }
 
-Dog::Dog(const Dog& other){
+Dog::Dog(const Dog& other): Animal(other) {
     std::cout << "the Dog Copy constructor called" << std::endl;
     type = other.type;
 }
