@@ -1,10 +1,10 @@
-NAME    = ClapTrap
+NAME    = Animal
 CPP     = c++
 FLAGS   = -std=c++98 -Wall -Wextra -Werror
 RM      = rm -rf
 
 
-SRC  = main.cpp ClapTrap.cpp \
+SRC  = main.cpp Animal.cpp Dog.cpp Cat.cpp \
 
 OBJ     = $(SRC:.cpp=.o)
 
