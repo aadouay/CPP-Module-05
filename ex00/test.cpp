@@ -3,7 +3,7 @@
 class base{
 
     public:
-        void    print(){
+        virtual void    print(){
             std::cout << "we are in the base class\n";
         }
 };
@@ -17,10 +17,7 @@ class drived: public base{
 };
 
 int main(){
-    drived obj;
 
-    obj.print();
-
-    base *ptr = &obj;
+    base *ptr = new drived();
     ptr->print();
 }
