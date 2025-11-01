@@ -13,6 +13,9 @@ class Dog: public Animal{
         Dog(const Dog& other);
         Dog& operator=(const Dog& other);
         void makeSound()const;
+        void    show_data(){
+            std::cout << "address of mind is " << mind << std::endl;
+        }
         ~Dog();
 };
 

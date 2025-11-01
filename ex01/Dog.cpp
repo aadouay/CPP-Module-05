@@ -11,10 +11,7 @@ Dog::Dog(const std::string name):Animal(name){
 Dog::Dog(const Dog& other): Animal(other), mind(new Brain()) {
     std::cout << "the Dog Copy constructor called" << std::endl;
     type = other.type;
-    mind = new Brain(); // <-- 1. Create a NEW brain
-    for (int i = 0; i < 100; i++) {
-        mind->ideas[i] = other.mind->ideas[i]; // <-- 2. Copy the ideas
-    }
+    mind = other.mind;
 }
 
 Dog& Dog::operator=(const Dog& other){
@@ -22,16 +19,7 @@ Dog& Dog::operator=(const Dog& other){
     if(this == &other)
         return *this;
     type = other.type;
-    // 2. Let the base class copy its members
-    Animal::operator=(other);
-
-    // 3. Delete THIS object's OLD brain to prevent a leak
-    delete mind;
-
-    // 4. Create a NEW brain
     mind = new Brain();
-
-    // 5. Copy the ideas from the 'other' brain to the NEW brain
     for (int i = 0; i < 100; i++) {
         mind->ideas[i] = other.mind->ideas[i];
     }
